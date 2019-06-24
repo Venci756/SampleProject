@@ -1,0 +1,113 @@
+﻿@model EFDbFirstApproachExample.Models.Product
+@using EFDbFirstApproachExample.HtmlHelpers
+
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<h2>Create Product</h2>
+
+@using (Html.BeginForm("Create", "Products",new {area = "Admin"}, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+@*<form action="/products/create" method="post" enctype="multipart/form-data">*@
+<div class="form-row">
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.ProductName)
+        @*<label for="ProductName">Product Name</label>*@
+        @Html.TextBoxFor(temp => temp.ProductName, new { placeholder = "Product Name", @class = "form-control" })
+        @*<input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Product Name" />*@
+        @Html.ValidationMessageFor(temp => temp.ProductName)
+    </div>
+
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.Authors)
+        @*<label for="ProductName">Product Name</label>*@
+        @Html.TextBoxFor(temp => temp.Authors, new { placeholder = "Authors", @class = "form-control" })
+        @*<input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Product Name" />*@
+        @Html.ValidationMessageFor(temp => temp.Authors)
+    </div>
+
+    
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.Price)
+        @*<label for="Price">Price</label>*@
+        @Html.TextBoxFor(temp => temp.Price, new { placeholder = "Price", @class = "form-control" })
+        @*<input type="number" class="form-control" id="Price" name="Price" placeholder="Price" />*@
+        @Html.ValidationMessageFor(temp => temp.Price)
+    </div>
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.DateOfPurpose)
+        @*<label for="DateOfPurchase">Date of Purchase</label>*@
+    @Html.TextBoxFor(temp => temp.DateOfPurpose, new { placeholder = "Date of Purchase", @class = "form-control" })
+    @*<input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurpose" placeholder="Date of Purchase" />*@
+    </div>
+
+
+<div class="form-group col-md-6">
+    @Html.LabelFor(temp => temp.AvailabilityStatus)
+    @*<label for="AvailabilityStatus">Availability Status</label>*@
+    @Html.DropDownListFor(temp => temp.AvailabilityStatus, new List<SelectListItem>() {
+        new SelectListItem(){ Text = "In Stock", Value = "In Stock" },
+        new SelectListItem(){ Text = "Out of Stock", Value = "Out of Stock" } }, new { @class = "form-control" })
+    @*<select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status">
+            <option value="">Please Select</option>
+            <option value="InStock">In Stock</option>
+            <option value="OutOfStock">Out of Stock</option>
+        </select>*@
+    @Html.ValidationMessageFor(temp => temp.AvailabilityStatus)
+</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.Category)
+            @*<label for="CategoryID">Category ID</label>*@
+            @Html.DropDownListFor(temp => temp.CategoryID, new SelectList(ViewBag.Categories, "CategoryID", "CategoryName"), "Please Select", new { @class = "form-control" })
+            @*<select class="form-control" id="CategoryID" name="CategoryID">
+            <option value="">Please Select</option>
+            @foreach (var cat in ViewBag.Categories)
+            {
+                <option value="@cat.CategoryID">@cat.CategoryName</option>
+            }
+        </select>*@
+            @Html.ValidationMessageFor(temp => temp.Category)
+        </div>
+
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.Publisher)
+            @*<label for="PublisherID">Publisher ID</label>*@
+            @Html.DropDownListFor(temp => temp.PublisherID, new SelectList(ViewBag.Publishers, "PublisherID", "PublisherName"), "Please Select", new { @class = "form-control" })
+            @*<select class="form-control" id="PublisherID" name="PublisherID">
+            <option value="">Please Select</option>
+            @foreach (var cat in ViewBag.Publishers)
+            {
+                <option value="@cat.PublisherID">@cat.PublisherName</option>
+            }
+        </select>*@
+            @Html.ValidationMessageFor(temp => temp.Publisher)
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Image">Image</label>
+        @Html.File("form-control-file")
+        @*<input type="file" class="form-control-file" id="Image" name="Image" />*@
+        @Html.ValidationMessageFor(temp => temp.Image)
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            @Html.CheckBoxFor(temp => temp.Active, new { @class = "form-check-input", value = "true" })
+            @Html.LabelFor(temp => temp.Active, new { @class = "form-check-label" })
+            @*<input class="form-check-input" type="checkbox" id="Active" name="Active" value="true" />
+            <label class="form-check-label" for="Active">
+                Active
+            </label>*@
+        </div>
+    </div>
+    @Html.ValidationSummary();
+    <button type="submit" class="btn btn-success">Create</button>
+    <a class="btn btn-danger" href="/admin/products/index">Cancel</a>
+@*</form>*@
+}
