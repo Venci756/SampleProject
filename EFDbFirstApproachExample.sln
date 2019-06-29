@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBookShop", "EFDbFirstApproachExample\ComicBookShop.csproj", "{2743E369-32A4-485E-9ED2-4B758809F98D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBookShop.DataLayer", "ComicBookShop.DataLayer\ComicBookShop.DataLayer.csproj", "{DF6E1A69-96C7-4523-8162-1BC988ED6706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBookShop.DomainModels", "ComicBookShop.DomainModels\ComicBookShop.DomainModels.csproj", "{403B43F0-AF1B-47AE-B608-DA3464513647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBookShop.ServiceLayer", "ComicBookShop.ServiceLayer\ComicBookShop.ServiceLayer.csproj", "{43B9AE33-B43D-4FEE-8CD8-3A56EFE99C89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicBookShop.ServiceContracts", "ComicBookShop.ServiceContracts\ComicBookShop.ServiceContracts.csproj", "{63D31E3A-1940-4462-B17D-BDAA7EB47B32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{2743E369-32A4-485E-9ED2-4B758809F98D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2743E369-32A4-485E-9ED2-4B758809F98D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2743E369-32A4-485E-9ED2-4B758809F98D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6E1A69-96C7-4523-8162-1BC988ED6706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6E1A69-96C7-4523-8162-1BC988ED6706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6E1A69-96C7-4523-8162-1BC988ED6706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6E1A69-96C7-4523-8162-1BC988ED6706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{403B43F0-AF1B-47AE-B608-DA3464513647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403B43F0-AF1B-47AE-B608-DA3464513647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403B43F0-AF1B-47AE-B608-DA3464513647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403B43F0-AF1B-47AE-B608-DA3464513647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B9AE33-B43D-4FEE-8CD8-3A56EFE99C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B9AE33-B43D-4FEE-8CD8-3A56EFE99C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B9AE33-B43D-4FEE-8CD8-3A56EFE99C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B9AE33-B43D-4FEE-8CD8-3A56EFE99C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D31E3A-1940-4462-B17D-BDAA7EB47B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D31E3A-1940-4462-B17D-BDAA7EB47B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D31E3A-1940-4462-B17D-BDAA7EB47B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D31E3A-1940-4462-B17D-BDAA7EB47B32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

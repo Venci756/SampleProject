@@ -1,7 +1,7 @@
 ﻿@model ComicBookShop.DomainModels.Product
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+    Layout = "~/Areas/Manager/Views/Shared/ManagerLayoutPage1.cshtml";
 }
 
 <h2>Product Details</h2>
@@ -34,7 +34,7 @@
         <th>Category ID</th>
         <td>@Model.Category.CategoryName</td>
     </tr>
-  
+
 </table>
 
-<a href="/admin/products/index">Back to Products</a>
+<a href="/Manager/products/index">Back to Products</a>

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace EFDbFirstApproachExample.Models
+namespace ComicBookShop.DomainModels
 {
     public class Product
     {
@@ -17,7 +16,7 @@ namespace EFDbFirstApproachExample.Models
         public string Authors { get; set; }
         [Required]
         public Nullable<decimal> Price { get; set; }
-        [Display(Name ="Date of purchase")]
+        [Display(Name = "Date of purchase")]
         public Nullable<System.DateTime> DateOfPurpose { get; set; }
         [Display(Name = "Availability Status")]
         [Required(ErrorMessage = "Please select the availability status.")]

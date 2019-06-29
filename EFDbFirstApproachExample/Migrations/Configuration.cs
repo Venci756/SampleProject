@@ -5,14 +5,14 @@ namespace EFDbFirstApproachExample.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EFDbFirstApproachExample.Models.CompanyDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<ComicBookShop.DataLayer.CompanyDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(EFDbFirstApproachExample.Models.CompanyDbContext context)
+        protected override void Seed(ComicBookShop.DataLayer.CompanyDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

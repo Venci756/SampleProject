@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using ComicBookShop.DomainModels;
 
 namespace EFDbFirstApproachExample.Controllers
 {
@@ -70,6 +71,10 @@ namespace EFDbFirstApproachExample.Controllers
                 if (userManager.IsInRole(user.Id,"Admin"))
                 {
                     return RedirectToAction("Index", "Home", new { area = "Admin" });
+                }
+                else if (userManager.IsInRole(user.Id, "Manager"))
+                {
+                    return RedirectToAction("Index", "Home", new { area = "Manager" });
                 }
                 return RedirectToAction("Index", "Home");
             }

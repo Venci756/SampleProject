@@ -168,6 +168,14 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\AdminLayoutPage1.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\web.config" />
+    <Content Include="Areas\Manager\Views\Shared\ManagerLayoutPage1.cshtml" />
+    <Content Include="Areas\Manager\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Manager\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Manager\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Manager\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -208,6 +216,10 @@
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Manager\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Manager\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -245,10 +257,6 @@
       <DependentUpon>201906240128023_RemovingNullColumns.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\CompanyDbContext.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -280,6 +288,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Manager\Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -308,6 +317,25 @@
       <DependentUpon>201906240128023_RemovingNullColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComicBookShop.DataLayer\ComicBookShop.DataLayer.csproj">
+      <Project>{df6e1a69-96c7-4523-8162-1bc988ed6706}</Project>
+      <Name>ComicBookShop.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComicBookShop.DomainModels\ComicBookShop.DomainModels.csproj">
+      <Project>{403b43f0-af1b-47ae-b608-da3464513647}</Project>
+      <Name>ComicBookShop.DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComicBookShop.ServiceContracts\ComicBookShop.ServiceContracts.csproj">
+      <Project>{63d31e3a-1940-4462-b17d-bdaa7eb47b32}</Project>
+      <Name>ComicBookShop.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComicBookShop.ServiceLayer\ComicBookShop.ServiceLayer.csproj">
+      <Project>{43b9ae33-b43d-4fee-8cd8-3a56efe99c89}</Project>
+      <Name>ComicBookShop.ServiceLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+<ItemGroup> <Reference Include="netstandard" /> </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

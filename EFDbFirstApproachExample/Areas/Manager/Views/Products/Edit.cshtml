@@ -2,13 +2,14 @@
 @using EFDbFirstApproachExample.HtmlHelpers
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+    Layout = "~/Areas/Manager/Views/Shared/ManagerLayoutPage1.cshtml";
 }
 
 <h2>Edit Product</h2>
-@using (Html.BeginForm("Edit", "Products", new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "Products", new { area = "Manager" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @*<form action="/products/create" method="post" enctype="multipart/form-data">*@
+    @*<form action="/products/create" method="post" enctype="multipart/form-data">
+    *@
     @Html.HiddenFor(temp => temp.ProductID)
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -48,15 +49,16 @@
         <div class="form-group col-md-6">
             @Html.LabelFor(temp => temp.AvailabilityStatus)
             @*<label for="AvailabilityStatus">Availability Status</label>*@
-            @Html.DropDownListFor(temp => temp.AvailabilityStatus, new List<SelectListItem>() {
+            @Html.DropDownListFor(temp => temp.AvailabilityStatus, new List<SelectListItem>
+                () {
                 new SelectListItem(){ Text = "In Stock", Value = "In Stock" },
                 new SelectListItem(){ Text = "Out of Stock", Value = "Out of Stock" } }, new { @class = "form-control" })
-            @*<select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status">
+                @*<select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status">
                     <option value="">Please Select</option>
                     <option value="InStock">In Stock</option>
                     <option value="OutOfStock">Out of Stock</option>
                 </select>*@
-            @Html.ValidationMessageFor(temp => temp.AvailabilityStatus)
+                @Html.ValidationMessageFor(temp => temp.AvailabilityStatus)
         </div>
     </div>
     <div class="form-row">
@@ -65,12 +67,12 @@
             @*<label for="CategoryID">Category ID</label>*@
             @Html.DropDownListFor(temp => temp.CategoryID, new SelectList(ViewBag.Categories, "CategoryID", "CategoryName"), "Please Select", new { @class = "form-control" })
             @*<select class="form-control" id="CategoryID" name="CategoryID">
-                    <option value="">Please Select</option>
-                    @foreach (var cat in ViewBag.Categories)
-                    {
-                        <option value="@cat.CategoryID">@cat.CategoryName</option>
-                    }
-                </select>*@
+                <option value="">Please Select</option>
+                @foreach (var cat in ViewBag.Categories)
+                {
+                <option value="@cat.CategoryID">@cat.CategoryName</option>
+                }
+            </select>*@
             @Html.ValidationMessageFor(temp => temp.Category)
         </div>
 
@@ -80,12 +82,12 @@
             @*<label for="PublisherID">Publisher ID</label>*@
             @Html.DropDownListFor(temp => temp.PublisherID, new SelectList(ViewBag.Publishers, "PublisherID", "PublisherName"), "Please Select", new { @class = "form-control" })
             @*<select class="form-control" id="PublisherID" name="PublisherID">
-                    <option value="">Please Select</option>
-                    @foreach (var cat in ViewBag.Publishers)
-                    {
-                        <option value="@cat.PublisherID">@cat.PublisherName</option>
-                    }
-                </select>*@
+                <option value="">Please Select</option>
+                @foreach (var cat in ViewBag.Publishers)
+                {
+                <option value="@cat.PublisherID">@cat.PublisherName</option>
+                }
+            </select>*@
             @Html.ValidationMessageFor(temp => temp.Publisher)
         </div>
     </div>
@@ -107,6 +109,7 @@
     </div>
     @Html.ValidationSummary();
     <button type="submit" class="btn btn-success">Update</button>
-    <a class="btn btn-danger" href="/admin/products/index">Cancel</a>
-    @*</form>*@
+    <a class="btn btn-danger" href="/Manager/products/index">Cancel</a>
+    @*
+</form>*@
 }

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace EFDbFirstApproachExample.Models
+namespace ComicBookShop.DomainModels
 {
     public class Category
     {
-        
+
         [Key]
         public long CategoryID { get; set; }
         public string CategoryName { get; set; }
